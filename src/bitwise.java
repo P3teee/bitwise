@@ -11,15 +11,15 @@ public class bitwise {
     }
 
     public void setHigh(int x) {
-        coord = (short)(coord & (x<<8));
+        coord = (short)((coord & 0xFF) | (x<<8));
     }
 
     public void setLow(int y) {
-        coord = (short)(coord & y);
+        coord = (short)((coord & 0xFF00) | y);
     }
 
     public int getHigh() {
-        return (coord>>>8);
+        return ((coord>>>8)&0x000000FF);
     }
 
     public int getLow(){
